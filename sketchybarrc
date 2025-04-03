@@ -1,0 +1,89 @@
+CONFIG_DIR="$HOME/.config/$BAR_NAME"
+ITEM_DIR="$CONFIG_DIR/items"
+SCRIPT_DIR="$CONFIG_DIR/scripts"
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+# Bar default config
+source "$SCRIPT_DIR/colors.sh"
+source "$SCRIPT_DIR/load_default_config.sh"
+$BAR_NAME --bar position=top height=36 blur_radius=30 color="0xff000000"
+
+# Register events
+$BAR_NAME --add event aerospace_workspace_change
+$BAR_NAME --add event input_change "AppleSelectedInputSourcesChangedNotification"
+
+# -- LEFT --
+
+# Aerospace workspace
+source $ITEM_DIR/aerospace.sh
+
+# Front app
+$BAR_NAME --add item front_app left
+source "$ITEM_DIR/front_app.sh"
+
+# -- NOTCH LEFT --
+
+# Date
+# $BAR_NAME --add item date_notch q
+$BAR_NAME --add item date q
+source "$ITEM_DIR/date.sh"
+
+# Input
+$BAR_NAME --add item input q
+source "$ITEM_DIR/input.sh"
+
+# -- NOTCH RIGHT --
+
+# Time
+# $BAR_NAME --add item time_notch e
+$BAR_NAME --add item time e
+source "$ITEM_DIR/time.sh"
+
+# -- RIGHT --
+
+# Battery
+$BAR_NAME --add item battery right
+source "$ITEM_DIR/battery.sh"
+
+# Volume
+$BAR_NAME --add item volume right
+source "$ITEM_DIR/volume.sh"
+
+# Headphone
+$BAR_NAME --add item headphone right
+source "$ITEM_DIR/headphone.sh"
+
+# Wifi
+$BAR_NAME --add item wifi right
+source "$ITEM_DIR/wifi.sh"
+
+# Bracket
+$BAR_NAME --add bracket sys battery volume headphone wifi \
+          --set sys \
+                background.height=24 \
+                background.corner_radius=5 \
+                background.drawing=on \
+                background.border_width=0
+
+# CPU and RAM
+$BAR_NAME -m --add item cpu_label right
+$BAR_NAME -m --add item ram_label right
+$BAR_NAME -m --add item cpu_percent right
+$BAR_NAME -m --add item ram_percent right
+source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/ram.sh"
+
+# Mail
+$BAR_NAME --add item mail right
+source "$ITEM_DIR/mail.sh"
+
+# Wechat
+$BAR_NAME --add item wechat right
+source "$ITEM_DIR/wechat.sh"
+
+# Media
+$BAR_NAME --add item media right
+source "$ITEM_DIR/media.sh"
+
+$BAR_NAME --update
+
