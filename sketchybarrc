@@ -6,7 +6,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # Bar default config
 source "$SCRIPT_DIR/colors.sh"
 source "$SCRIPT_DIR/load_default_config.sh"
-$BAR_NAME --bar position=top height=36 blur_radius=30 color="0xff000000"
+$BAR_NAME --bar position=top height=33 blur_radius=30 color="0xff000000"
 
 # Register events
 $BAR_NAME --add event aerospace_workspace_change
