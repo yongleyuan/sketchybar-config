@@ -8,11 +8,13 @@ $BAR_NAME --add item aerospace.label left \
                 icon.color="0xff$LAVENDER" \
                 label.drawing=off
 
-sids1=("Y" "U" "I" "O" "P")
-for sid in ${sids1[@]}; do
-  $BAR_NAME --add item aerospace.$sid left \
-            --subscribe aerospace.$sid aerospace_workspace_change \
-            --set aerospace.$sid \
+ss=(1 2 3 4 5)
+sids=("Y" "U" "I" "O" "P")
+for s in ${ss[@]}; do
+  sid=${sids[$(($s-1))]}
+  $BAR_NAME --add item aerospace.$s left \
+            --subscribe aerospace.$s aerospace_workspace_change \
+            --set aerospace.$s \
                   background.padding_right=10 \
                   icon.drawing=off \
                   padding_left=0 \
@@ -22,8 +24,8 @@ for sid in ${sids1[@]}; do
                   label.padding_right=8 \
                   label.color="0xaa$LAVENDER" \
                   label.highlight_color="0xffffffff" \
-                  click_script="aerospace workspace $sid" \
-                  script="$PLUGIN_DIR/aerospace.sh $sid"
+                  click_script="aerospace workspace $s" \
+                  script="$PLUGIN_DIR/aerospace.sh $s"
 done
 
 $BAR_NAME --add bracket spaces '/aerospace\..*/' \
