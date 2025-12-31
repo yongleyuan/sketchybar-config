@@ -7,6 +7,7 @@ $BAR_NAME --subscribe input input_change \
                 label.drawing=off \
                 icon="" \
                 icon.color="0xfffbf1c7" \
+                icon.font.size=12 \
                 icon.drawing=off \
                 background.drawing=off \
                 script="$PLUGIN_DIR/input.sh"
