@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-OPENED=$(ps aux | grep -v grep | grep -ci "Spark Desktop")
+OPENED=$(ps aux | grep -v grep | grep -ci "Mail.app")
 
 if [[ $OPENED -eq 0 ]]; then
   $BAR_NAME --set $NAME drawing=off
@@ -8,7 +8,7 @@ if [[ $OPENED -eq 0 ]]; then
 else
   $BAR_NAME --set $NAME drawing=on
 
-  COUNT=$($HOME/.config/$BAR_NAME/scripts/notification.sh "Spark Desktop")
+  COUNT=$($HOME/.config/$BAR_NAME/scripts/notification.sh "Mail")
 
   if [[ $COUNT -lt 1 ]]; then
     $BAR_NAME --set $NAME label.drawing=off icon.padding_right=8
