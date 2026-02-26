@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-$BAR_NAME --subscribe front_app front_app_switched \
+$BAR_NAME --subscribe front_app front_app_switched layout_change \
           --set front_app \
                 icon="" \
                 icon.color="0xff$TEXT" \

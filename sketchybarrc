@@ -11,6 +11,7 @@ $BAR_NAME --bar position=top height=33 blur_radius=30 color="0xff000000"
 # Register events
 $BAR_NAME --add event aerospace_workspace_change
 $BAR_NAME --add event input_change "AppleSelectedInputSourcesChangedNotification"
+$BAR_NAME --add event layout_change
 
 # -- LEFT --
 
