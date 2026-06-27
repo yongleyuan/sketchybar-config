@@ -2,7 +2,7 @@
 
 OPENED=$(ps aux | grep -v grep | grep -ci "Mail.app")
 
-if [[ $OPENED -eq 0 ]]; then
+if [[ $OPENED -eq 1 ]]; then
   $BAR_NAME --set $NAME drawing=off
 
 else
